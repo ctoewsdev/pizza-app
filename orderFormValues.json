@@ -1,13 +1,49 @@
 {
-    "pizzas" : [
-            {"size" : "Personal", "price" : "12.00" },
-            {"size" :"Small", "price" : "14.00" }, 
-            {"size" : "Medium", "price" : "16.00" },
-            {"size" : "Large", "price" : "18.00" }, 
-            {"size" : "Extra Large", "price" : "20.00" }
-        ],
-    "crusts" : ["Thin Crust", "Original", "Cheese Stuffed"],
-    "cheeses" : ["Mozarella", "Chedder", "Parmesan", "Feta"],
-    "meats" : ["Pepperoni", "Ham", "Bacon", "Ground Beef", "Sausage", "Chicken"],
-    "veggies" : ["Mushrooms", "Black Olives", "Green Olives", "Green Pepper", "Onion", "Hot Peppers"]
+    "pizzas": [
+        {
+            "size": "Personal",
+            "price": "12.00"
+        },
+        {
+            "size": "Small",
+            "price": "14.00"
+        },
+        {
+            "size": "Medium",
+            "price": "16.00"
+        },
+        {
+            "size": "Large",
+            "price": "18.00"
+        }
+    ],
+    "crusts": [
+        "Thin Crust",
+        "Original",
+        "Cheese Stuffed"
+    ],
+    "cheeses": [
+        "Mozarella",
+        "Chedder",
+        "Asagio",
+        "Parmesan",
+        "Feta"
+    ],
+    "meats": [
+        "Pepperoni",
+        "Ham",
+        "Bacon",
+        "Ground Beef",
+        "Sausage",
+        "Chicken"
+    ],
+    "veggies": [
+        "Mushrooms",
+        "Black Olives",
+        "Green Pepper",
+        "Onion",
+        "Tomomato",
+        "Pineapple",
+        "Hot Peppers"
+    ]
 }

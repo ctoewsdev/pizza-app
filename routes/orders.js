@@ -1,11 +1,11 @@
-let express = require('express');
-let Order = require('../model/Order');
+const express = require('express');
+const Order = require('../model/Order');
 const orderFormValues = require('../orderFormValues');
 
-const CostCalculator = require('../public/javascripts/CostCalculator');
+const CostCalculator = require('../public/javascripts/cost-calculator');
 const calculator = new CostCalculator();
 
-let router = express.Router();
+const router = express.Router();
 
 router.get('/', function(req, res){ //
     res.render('order',  {
@@ -67,14 +67,14 @@ router.get('/api/orders/search', function(req, res){
 });
 
 router.post('/api/orders', function(req, res){
-    var order = new Order(req.body);    
+    let order = new Order(req.body);    
 
     //calculate total cost and add to order
     let toppings = req.body.toppings;
-    console.log("toppings" + toppings)
+    console.log("Add a new order with the toppings: " + toppings)
     order.totalCost = calculator.calculateCostByQty(order.price, order.quantity, toppings);
 
-    //Post order to database
+    //save order to database
     order.save(function(err){
         if (err) {
             console.log("Error : ", err);

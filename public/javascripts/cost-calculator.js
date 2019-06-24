@@ -1,7 +1,7 @@
 class CostCalculator {
 
     constructor () {
-        
+        this.gst = 0.5;
     }
 
     calculateCostByQty(pizzaCost, qty, chargedToppingsTotal) {
