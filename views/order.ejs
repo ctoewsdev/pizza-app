@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="javascripts/order.js"></script>
+    <title><%= title %></title>
+</head>
+<body>
+    <div id="top">
+        <div class="nav">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="/">Order</a></li>
+                <li><a href="/ordersList">Orders List</a></li>  
+            </ul>
+        </div>
+
+        <div class="pageTitle">
+            <h1><%= message %></h1>
+            <div id="statusMsg">
+            </div>
+        </div>
+    </div>
+
+    <form method="post" id="submitForm">
+
+    <div class="dataEntry">
+        <h2>Please provide your street address:</h2> 
+            <p><input type="text" name="address" size="30" id="address" placeholder="House, Street, City" required></p> 
+    </div>
+    
+    <div class="dataEntry">
+        <h2>Please provide your telephone number:</h2> 
+        <p><input type="text" name="telephone" size="10" id="telephone" placeholder="999-999-9999" required></p>
+    </div>
+    
+    <div class="dataEntry">
+        <h2>Choose your size:</h2>
+        <% pizzas.forEach(function(element){%>
+            <p><input type="radio" name="pizza" value="<%= element.size%>,<%= element.price%>" required>
+            <%= element.size %> <%= element.price %></p>
+        <% }) %>
+    </div>
+    
+    <div class="dataEntry">
+        <h2>Would you like more than one pizza?</h2> 
+        <p><input type="text" name="quantity" id="quantity" size="4" value="<%= quantity %>"></p>
+    </div>
+    
+    <div class="dataEntry">
+        <h2>Choose your crust:</h2>
+        <% crusts.forEach(function(element){%>
+           <p><input type="radio" name="crust" value="<%= element %>" required><%= element %></p>
+        <% }) %>
+    </div>
+    
+    <div class="dataEntry">
+        <h2>Choose your cheese:</h2>
+        <p>One cheese is included. Each additional cheese is $.50</p>
+        <% cheeses.forEach(function(element){%>
+            <p><input type="checkbox" name="cheese" value="<%= element %>"><%= element %></p>
+        <% }) %>
+    </div>
+    
+    <div class="dataEntry">
+        <h2>Choose your meat topping:</h2>
+        <p>One meat is included. Each additional meat is $.50</p>        
+        <% meats.forEach(function(element){%>
+            <p><input type="checkbox" name="meat" value="<%= element %>"><%= element %></p>
+        <% }) %>
+    </div>
+
+    <div class="dataEntry">
+        <h2>Choose your veggie topping:</h2>
+        <p>One veggie is included. Each additional veggie is $.50</p>        
+        <% veggies.forEach(function(element){%>
+            <p><input type="checkbox" name="veggie" value="<%= element %>"><%= element %></p>
+        <% }) %>
+    </div>
+    <div id="statusMsg"></div>
+    <div class="buttons">
+        <button id="submitButton" type="submit">Submit</button>
+        <button id="resetButton" type="reset">Reset</button>  
+        </div>
+    </form>
+</body>
+</html>
