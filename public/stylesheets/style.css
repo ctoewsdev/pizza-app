@@ -1,0 +1,165 @@
+body, html {
+  height: 100%; 
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #DFDFD5;
+
+}
+
+#top {
+  background-image: url("../images/pizza.png");
+  background-origin: center;
+  background-size: cover;
+  padding-bottom: 20px;
+}
+
+div { 
+    width: 70%;
+    margin: 0 auto;
+  }
+
+.pageTitle {
+  margin-top: 20px;
+  background-color: #333;
+  text-align: center;
+  width: 50%;
+  padding: 25px;
+  border: 2px solid #E0DADA;;
+}
+
+h1 {
+  font-size: 35px;
+  color: #E0DADA;
+
+}
+
+.dataEntry {
+  background-color: rgba(68, 64, 64, 0.9);
+
+}
+
+.dataEntry > p {
+  padding: 5px 15px 5px 25px;
+  color: white;
+  text-shadow: 0.05em 0.05em #110101;
+  font-size: 1.1em;
+}
+
+#statusMsg {
+  width: 100%;
+  margin: 0 auto;
+  color: rgba(255, 0, 0, 0.97);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.row {
+  margin-top: 20px;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+.message > h1 {
+
+  font-size: 25px;
+}
+
+h2 {
+  padding: 5px 15px 0px 25px;
+  color: white;
+  text-shadow: 0.1em 0.1em #333;
+  font-size: 1.3em;
+}
+
+input[type=text] {
+  color: black;
+}
+
+.buttons {
+  background-image: url("../images/pizza.png");
+  background-origin: bottom;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 60px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.button {
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0, 15px;
+}
+
+
+#submitButton {
+  font-size: 25px;
+  margin-top: 15px;
+  margin-right: 25px;
+}
+
+#resetButton {
+  font-size: 25px;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+
+
+/*Table*/
+table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+table , td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: "30%";
+}
+
+
+
+tr:first-of-type {
+  font-weight: bold;
+}
+
+tr:nth-child(odd) {
+  background-color: #BBBBB7;
+}
+
+tr:nth-child(even) {
+  background-color: #E2DEDE;
+}
+
+/* Navigation */
+.nav {
+  width: 100%;
+  margin: 0 auto;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
