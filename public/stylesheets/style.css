@@ -6,52 +6,54 @@ body, html {
 
 }
 
-#header {
-  background-image: url("../images/pizza.png");
-  background-origin: center;
-  background-size: cover;
-  padding-bottom: 20px;
-}
+
 
 div { 
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
   }
 
-.footer { 
-    width: 68%;
+
+ header {
+    background-image: url("../images/pizza.png");
+    background-origin: center;
+    background-size: cover;
+    padding-bottom: 20px;
+    border: 1px solid black;
+    width: 90%;
     margin: 0 auto;
-    background-color:  #333;
-    font-size: 15px;
-    padding: 5px;
-    color: #E0DADA;
-    text-align: right;
-    border: 2px solid black;
   }
 
 .pageTitle {
   margin-top: 20px;
   background-color: #333;
   text-align: center;
-  width: 50%;
-  padding: 25px;
-  border: 2px solid #E0DADA;;
+  width: 70%;
+  border: 1px solid #0A0A08;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.company {
+  font-size: 3.1em;
+  color: #976D13;
+  text-shadow: 0.05em 0.05em #181715;
+  padding-top:10px;
 }
 
 h1 {
-  font-size: 35px;
-  color: #E0DADA;
-
+  font-size: 2.0em;
+  text-shadow: 0.01em 0.01em #181715;
+  color: #976D13;
+  text-shadow: 0.05em 0.1em #131212;
 }
 
 .dataEntry {
-  background-color: rgba(68, 64, 64, 0.9);
+  background-color: rgba(41, 39, 39, 0.9);
   border: 2px solid black;
   padding-top: 0px;
   padding-bottom: 5px;
   margin-top: 10px;
-
-
 }
 
 .dataEntry > p {
@@ -77,16 +79,13 @@ h1 {
 
 }
 
-.message > h1 {
-
-  font-size: 25px;
-}
 
 h2 {
   padding-left: 25px;
-  color: white;
-  text-shadow: 0.1em 0.1em #333;
-  font-size: 1.3em;
+  margin-top: 10px;
+  color: #97793B;
+  text-shadow: 0.05em 0.1em #131212;
+  font-size: 1.5em;
 }
 
 h3 {
@@ -101,19 +100,16 @@ input[type=text] {
 }
 
 .buttons {
-  background-image: url("../images/pizza.png");
-  background-origin: bottom;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 60px;
+margin-top: 15px;
+margin-bottom: 25px;
   text-align: center;
-  margin-bottom: 10px;
+
 }
 
-.button {
+button {
   text-decoration: none;
   font-size: 30px;
-  margin: 0, 15px;
+
 }
 
 
@@ -129,7 +125,23 @@ input[type=text] {
   margin-top: 15px;
 }
 
+.copyright{
+  background-color:  #333;
+  font-size: 15px;
+  padding: 5px;
+  color: #E0DADA;
+  text-align: right;
+  width: 100%;
+}
 
+.footer { 
+  width: 90%;
+  margin: 0 auto;
+  background-image: url("../images/pizza.png");
+  margin-top:10px;
+  margin-bottom: 0px;
+  border: 2px solid black;
+}
 
 /*Table*/
 table {

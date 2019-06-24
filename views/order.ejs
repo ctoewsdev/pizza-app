@@ -5,91 +5,91 @@
     <% include partials/head %>
 </head>
 
-    <body>
-     <nav>    <% include partials/navigation %></nav>
-        
-<header>
+<body>
+    <header>
+        <nav>
+            <% include partials/navigation %>
+        </nav>
         <% include partials/header %>
-</header>
-           
+    </header>
 
-            
-        
+    <form method="post" id="submitForm">
 
-        <form method="post" id="submitForm">
+        <div class="dataEntry">
+            <h2>Please provide your street address:</h2>
+            <p><input type="text" name="address" size="30" id="address" placeholder="House, Street, City" required></p>
+        </div>
 
-            <div class="dataEntry">
-                <h2>Please provide your street address:</h2>
-                <p><input type="text" name="address" size="30" id="address" placeholder="House, Street, City" required></p>
-            </div>
+        <div class="dataEntry">
+            <h2>Please provide your telephone number:</h2>
+            <p><input type="text" name="telephone" size="10" id="telephone" placeholder="999-999-9999" required></p>
+        </div>
 
-            <div class="dataEntry">
-                <h2>Please provide your telephone number:</h2>
-                <p><input type="text" name="telephone" size="10" id="telephone" placeholder="999-999-9999" required></p>
-            </div>
+        <div class="dataEntry">
+            <h2>Choose your size:</h2>
+            <% pizzas.forEach(function(element){%>
+                <p><input type="radio" name="pizza" value="<%= element.size%>,<%= element.price%>" required>
+                    <%= element.size %>
+                        <%= element.price %>
+                </p>
+                <% }) %>
+        </div>
 
-            <div class="dataEntry">
-                <h2>Choose your size:</h2>
-                <% pizzas.forEach(function(element){%>
-                    <p><input type="radio" name="pizza" value="<%= element.size%>,<%= element.price%>" required>
-                        <%= element.size %>
-                            <%= element.price %>
-                    </p>
-                    <% }) %>
-            </div>
+        <div class="dataEntry">
+            <h2>Would you like more than one pizza?</h2>
+            <p><input type="text" name="quantity" id="quantity" size="4" value="<%= quantity %>"></p>
+        </div>
 
-            <div class="dataEntry">
-                <h2>Would you like more than one pizza?</h2>
-                <p><input type="text" name="quantity" id="quantity" size="4" value="<%= quantity %>"></p>
-            </div>
+        <div class="dataEntry">
+            <h2>Choose your crust:</h2>
+            <% crusts.forEach(function(element){%>
+                <p><input type="radio" name="crust" value="<%= element %>" required>
+                    <%= element %>
+                </p>
+                <% }) %>
+        </div>
 
-            <div class="dataEntry">
-                <h2>Choose your crust:</h2>
-                <% crusts.forEach(function(element){%>
-                    <p><input type="radio" name="crust" value="<%= element %>" required>
-                        <%= element %>
-                    </p>
-                    <% }) %>
-            </div>
+        <div class="dataEntry">
+            <h2>Choose your cheese:</h2>
+            <h3>One cheese is included. Each additional cheese is $.50</h3>
+            <% cheeses.forEach(function(element){%>
+                <p><input type="checkbox" name="cheese" value="<%= element %>">
+                    <%= element %>
+                </p>
+                <% }) %>
+        </div>
 
-            <div class="dataEntry">
-                <h2>Choose your cheese:</h2>
-                <h3>One cheese is included. Each additional cheese is $.50</h3>
-                <% cheeses.forEach(function(element){%>
-                    <p><input type="checkbox" name="cheese" value="<%= element %>">
-                        <%= element %>
-                    </p>
-                    <% }) %>
-            </div>
+        <div class="dataEntry">
+            <h2>Choose your meat topping:</h2>
+            <h3>One meat is included. Each additional meat is $.50</h3>
+            <% meats.forEach(function(element){%>
+                <p><input type="checkbox" name="meat" value="<%= element %>">
+                    <%= element %>
+                </p>
+                <% }) %>
+        </div>
 
-            <div class="dataEntry">
-                <h2>Choose your meat topping:</h2>
-                <h3>One meat is included. Each additional meat is $.50</h3>
-                <% meats.forEach(function(element){%>
-                    <p><input type="checkbox" name="meat" value="<%= element %>">
-                        <%= element %>
-                    </p>
-                    <% }) %>
-            </div>
-
-            <div class="dataEntry">
-                <h2>Choose your veggie topping:</h2>
-                <h3>One veggie is included. Each additional veggie is $.50</h3>
-                <% veggies.forEach(function(element){%>
-                    <p><input type="checkbox" name="veggie" value="<%= element %>">
-                        <%= element %>
-                    </p>
-                    <% }) %>
-            </div>
+        <div class="dataEntry">
+            <h2>Choose your veggie topping:</h2>
+            <h3>One veggie is included. Each additional veggie is $.50</h3>
+            <% veggies.forEach(function(element){%>
+                <p><input type="checkbox" name="veggie" value="<%= element %>">
+                    <%= element %>
+                </p>
+                <% }) %>
+        </div>
+        <footer class="footer">
             <div id="statusMsg"></div>
             <div class="buttons">
                 <button id="submitButton" type="submit">Submit</button>
                 <button id="resetButton" type="reset">Reset</button>
             </div>
-        </form>
+            <% include partials/copyright %>
+        </footer>
+    </form>
 
-        <% include partials/footer %>
-   
-    </body>
+
+
+</body>
 
 </html>

@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/', function(req, res){ //
     res.render('order',  {
         title : "Order", 
-        message : "Please place your order.",
+        message : "Please place your order",
         address:orderFormValues.address, 
         telephone : "", 
         quantity : "1",
@@ -24,7 +24,7 @@ router.get('/', function(req, res){ //
 router.get('/ordersList', function(req, res){ 
     res.render('ordersList', {
         title : "OrdersList", 
-        message : "Current List of All Orders."
+        message : "List of All Orders"
     });
     console.log("router has rendered orders list page")
 });
