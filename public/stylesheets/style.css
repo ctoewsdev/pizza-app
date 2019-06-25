@@ -26,14 +26,14 @@ body, html {
 
 .nav li a {
   display: block;
-  color: white;
+  color:white; 
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
 .nav li a:hover {
-  background-color: #111;
+  background-color: #976D13;
 }
 
 /* * * * */
@@ -99,12 +99,8 @@ h1 {
   color: rgba(255, 0, 0, 0.97);
   font-size: 18px;
   font-weight: bold;
-}
-
-.row {
-  margin-top: 20px;
-  width: 100%;
-  margin: 0 auto;
+  background-color: #333;
+  text-align: center;
 }
 
 h2 {
@@ -143,14 +139,15 @@ button {
   margin-right: 25px;
   border: none;
   border-radius: 15px;
-background-color: #868279;
-padding-left: 15px;
-padding-right: 15px;
- 
+  background-color: #868279;
+  padding-left: 15px;
+  padding-right: 15px;
   cursor: pointer;
 }
 
-.button:hover {background-color: #97793B}
+.button:hover {
+  background-color: #97793B
+}
 
 .copyright {
   background-color: #333;
@@ -170,16 +167,65 @@ padding-right: 15px;
   border: 2px solid black;
 }
 
-/*Table*/
-
-table {
-  width: 100%;
-  margin: 0 auto;
+#search-div{
+  background-color: #333;
+  color: #97793B;
+  text-shadow: 0.05em 0.1em #131212;
+  font-size: 1.1em;
+  padding-top: 2px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
 
-table, td {
-  border-collapse: collapse;
-  border: 1px solid black;
+.searchresult-title {
+  background-color: #333;
+  text-align: center;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  margin-bottom:0px;
+}
+
+#search-div h2{
+  text-align: center;
+  font-size: 1.7em;
+}
+
+#search-button {
+  text-align: right;
+  color: black;
+  margin-top: 0px;
+}
+
+#search-boxes{
+  text-align: center;
+  font-size: 1.1em;
+  margin-bottom: 0px;
+}
+
+/*Table*/
+
+#orderlist-title {
+  background-color: #333;
+  text-align: center;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  margin-top: 15px;
+}
+
+.orderlist-table-div {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0px;
+}
+
+.orderlist-table-div table {
+  width: 90%;
+  margin: 0 auto;
+}
+.orderlist-table-div tr {
+  color: black;
+  text-shadow: none;
 }
 
 table ul {
@@ -188,15 +234,23 @@ table ul {
   list-style: none;
 }
 
-tr:first-of-type {
+.orderlist-table-div tr:first-of-type {
   font-weight: bold;
-}
-
-tr:nth-child(odd) {
-  background-color: #BBBBB7;
+  background-color: #333 !important;
+  color: #97793B;
+  text-shadow: 0.05em 0.1em #131212;
+  font-size: 1.1em;
 }
 
 tr:nth-child(even) {
-  background-color: #E2DEDE;
+  background-color: #747070 !important;
 }
+
+tr:nth-child(odd) {
+  background-color: #AFAEAE !important;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #CFCF98;
+}
+
 

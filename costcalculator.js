@@ -11,11 +11,8 @@ class CostCalculator {
     calculateSubtotal(reqBody) {
         let sizecost = reqBody.price * 100;
         let toppingsCost = this.getToppingsPrice(reqBody.chargedtoppings);
-        console.log("toppingcost: " + toppingsCost); 
         let quantity = reqBody.quantity;
-        console.log("quantity: " + quantity); 
         let subtotal = (sizecost + toppingsCost) * quantity;
-        console.log("subtotal:" + subtotal);
         return this.roundDecimals(subtotal) / 100;
     }
     calculateTax(subtotal) {

@@ -4,7 +4,7 @@ $(function ready() {
     $.getJSON("/api/orders", function (data) {
 
         //header row    
-        let htmllistheader = 
+        let htmllistheader =
             '<tr>\
                 <td>\
                     Order\
@@ -28,11 +28,11 @@ $(function ready() {
         data.forEach(function (item) {
             date = new Date(item.createdon);
 
-            let htmllistbody = 
-            '<tr>\
+            let htmllistbody =
+                '<tr>\
                 <td>\
                     <ul>\
-                        <li><strong>Date:</strong> ' + date.toDateString()  + '</li>\
+                        <li><strong>Date:</strong> ' + date.toDateString() + '</li>\
                     </ul>\
                  </td>\
                 <td>\
@@ -69,9 +69,12 @@ $(function ready() {
         });
     });
 
-    //Consume for searching orders by telephone and/or address    
-    $('#search-form').submit(function (event) {
-        event.preventDefault();
+    //Consume for searching orders by telephone and/or address      
+    $('#search').click(function () {
+
+        //clear previous search values
+        $("#searchResultTitle").empty();
+        $("#searchedOrders").empty();
 
         //Obtain search parameters from searchbox ids
         let searchTelephone = document.getElementById("searchTelephone").value;
@@ -82,16 +85,6 @@ $(function ready() {
         let validationErrMessage = "";
         let validateSearchAddress = validateAddress(searchAddress);
         let validateSearchTelephone = validateTelephone(searchTelephone);
-
-        //Check if a value is invalid, and load message
-        if (validateSearchTelephone == false) {
-            validationErrMessage += " Telephone search value is invalid (please use format 999-999-9999)."
-            valid = false;
-        }
-        if (validateSearchAddress == false) {
-            validationErrMessage += " Address search value is invalid (please only use alphanumeric, comma and hyphen)."
-            valid = false;
-        }
 
 
         //Check if values are empty, and display message
@@ -116,7 +109,6 @@ $(function ready() {
             };
 
 
-
             $.ajax({
                 url: '/api/orders/search',
                 type: 'GET',
@@ -134,10 +126,68 @@ $(function ready() {
                     else {
                         //set up header row
                         $('#searchResultTitle').append('<h1>Search Results</h1>');
-                        $('#searchedOrders').append('<tr><td>Telephone</td><td>Address</td><td>Size</td><td>Price</td><td>Qty</td><td>Crust</td><td>Cheese</td><td>Meats</td><td>Veggies</td><td>Total</td></tr>');
+                        //header row    
+                        let htmllistheader =
+                            '<tr>\
+                                <td>\
+                                    Order\
+                                </td>\
+                                <td>\
+                                    Customer\
+                                </td>\
+                                <td>\
+                                    Pizza\
+                                </td>\
+                                <td>\
+                                    Toppings\
+                                </td>\
+                                <td>\
+                                    Cost\
+                                </td>\
+                            </tr>';
+                        $('#searchedOrders').append(htmllistheader);
+
                         //dispaly results in table
                         data.forEach(function (item) {
-                            $('#searchedOrders').append('<tr><td>' + item.telephone + '</td><td>' + item.address + '</td><td>' + item.size + '</td><td>' + item.price + '</td><td>' + item.quantity + '</td><td>' + item.crust + '</td><td>' + item.cheese + '</td><td>' + item.meat + '</td><td>' + item.veggie + '</td><td>' + item.totalCost + '</td></tr>');
+                            date = new Date(item.createdon);
+
+                            let htmllistbody =
+                                '<tr>\
+                                    <td>\
+                                        <ul>\
+                                            <li><strong>Date:</strong> ' + date.toDateString() + '</li>\
+                                        </ul>\
+                                        </td>\
+                                    <td>\
+                                        <ul>\
+                                            <li><strong>Phone:</strong> ' + item.telephone + '</li>\
+                                            <li><strong>Address:</strong> ' + item.address + '</li>\
+                                        </ul>\
+                                    </td>\
+                                    <td>\
+                                        <ul>\
+                                            <li><strong>Size:</strong> ' + item.size + '</li>\
+                                            <li><strong>Price:</strong> $' + item.price + '</li>\
+                                            <li><strong>Crust:</strong> ' + item.crust + '</li>\
+                                            <li><strong>Quantity:</strong> ' + item.quantity + '</li>\
+                                        </ul>\
+                                    </td>\
+                                    <td>\
+                                        <ul>\
+                                            <li><strong>Cheese:</strong> ' + item.cheese + '</li>\
+                                            <li><strong>Meat:</strong> ' + item.meat + '</li>\
+                                            <li><strong>Veggie:</strong> ' + item.veggie + '</li>\
+                                        </ul>\
+                                    </td>\
+                                    <td>\
+                                        <ul>\
+                                            <li><strong>Subtotal:</strong> $' + item.subtotal + '</li>\
+                                            <li><strong>Tax:</strong> $' + item.tax + '</li>\
+                                            <li><strong>Total:</strong> $' + item.totalcost + '</li>\
+                                        </ul>\
+                                    </td>\
+                                </tr>';
+                            $('#searchedOrders').append(htmllistbody);
                         });
                     }
                 }
@@ -147,7 +197,6 @@ $(function ready() {
 });
 
 //VALIDATION FUNCTIONS
-
 function is(data) {
     if (data == "") {
         console.log("search data " + data + " is empty");
@@ -165,8 +214,6 @@ function is(data) {
     }
 }
 
-
-//Validation functions
 function validateAddress(address) {
     if (address == "") {
         return;

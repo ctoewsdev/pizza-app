@@ -27,7 +27,7 @@ $(function ready() {
         //Prevent AJAX POST call if address or telephone are NOT valid
         if (valid == false) {
             $('#statusMsg').html(validationErrMessage);
-            window.scrollTo(0, 0);
+            window.scrollTo(0, findPos(document.getElementById("statusMsg")));
         }
 
         //Proceed with AJAX POST call if valid
@@ -115,6 +115,7 @@ $(function ready() {
                     $('#statusMsg').removeClass();
                     $('#statusMsg').addClass('alert alert-danger');
                     $('#statusMsg').html('Error processing your order');
+                    window.scrollTo(0, findPos(document.getElementById("statusMsg")));
                     console.log('Request failed : ', status);
                 }
             });

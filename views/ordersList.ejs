@@ -6,56 +6,45 @@
 </head>
 
 <body>
-    <nav>
-        <% include partials/navigation %>
-    </nav>
-
     <header>
+        <nav>
+            <% include partials/navigation %>
+        </nav>
         <% include partials/header %>
     </header>
 
     <div id="search-div">
-        <form id="search-form" method="get"> 
-        <table>
-                <tr>
-                    <td>
-                        <h2>Search for a specific order:</h2>
-                    </td>
-               
-                    <td>By telephone:</td>
-                    <td><input type="text" id="searchTelephone" /></td>
-               
-                    <td>By address:</td>
-                    <td><input type="text" id="searchAddress" /></td>
-                </tr>
-                <tr>
-                    <td><button class="button">Search</button></td>
-                </tr>
-            </table>
-        </form>   
-    </div>
 
-    <div class="searchResultMessage" id="searchedOrders"></div>
+        <h2>Search for a specific order:</h2>
 
-    <div class="row">
-        <div class="col-lg-10">
-            <table class="table table-striped table-bordered table-condensed" id="searchedOrders">
-            </table>
+        <p id="search-boxes">By telephone: <input type="text" id="searchTelephone" /> &nbsp;&nbsp;By address: <input type="text" id="searchAddress"
+            /></p>
+
+
+        <p id="search-button"><button class="button" id="search">Search</button></p>
+
+
+
+
+        <div class="searchresult-title" id="searchResultTitle">
+            <h1></h1>
+        </div>
+        <div class="orderlist-table-div">
+            <table class="table table-striped table-bordered
+            table-hover table-condensed" id="searchedOrders"></table>
         </div>
     </div>
 
-    <div class="message">
+    <div id="orderlist-title">
         <h1>
             <%= message %>
         </h1>
     </div>
 
-    <div class="row">
-        <div class="col-lg-10">
-            <table class="table table-striped table-bordered
-table-hover table-condensed" id="orders">
-            </table>
-        </div>
+    <div class="orderlist-table-div">
+        <table class="table table-striped table-bordered
+table-hover table-condensed" id="orders"></table>
+
     </div>
 
     <footer class="footer">
