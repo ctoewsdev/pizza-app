@@ -6,10 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-//NPM warning that I need an updated promise library
-
-// var index = require('./routes/index');
-// var users = require('./routes/users');
 var orders = require('./routes/orders');
 
 //Set up connection to MongoDB, use meaningful folder name
@@ -19,7 +15,7 @@ mongoose.connect(mongoUrl, options, function (err) {
   if (err) {
     console.log("Error connecting to MongoDB");
     process.exit(1);
-  }
+  } 
 });
 
 var app = express();

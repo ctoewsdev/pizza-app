@@ -14,42 +14,32 @@
         <% include partials/header %>
     </header>
 
-
-
-    <div class="row">
-        <div class="col-sm-3">
-            <table class="table table-bordered
-                table-hover table-condensed">
+    <div id="search-div">
+        <form id="search-form" method="get"> 
+        <table>
                 <tr>
                     <td>
                         <h2>Search for a specific order:</h2>
                     </td>
-                </tr>
-                <tr>
-                    <td>By telephone number:</td>
+               
+                    <td>By telephone:</td>
                     <td><input type="text" id="searchTelephone" /></td>
-                </tr>
-                <tr>
+               
                     <td>By address:</td>
                     <td><input type="text" id="searchAddress" /></td>
                 </tr>
                 <tr>
-                    <td><button id="search">Search</button></td>
+                    <td><button class="button">Search</button></td>
                 </tr>
             </table>
-        </div>
+        </form>   
     </div>
 
-
-    <div class="message" id="searchResultTitle">
-
-    </div>
-
+    <div class="searchResultMessage" id="searchedOrders"></div>
 
     <div class="row">
         <div class="col-lg-10">
-            <table class="table table-striped table-bordered
-table-hover table-condensed" id="searchedOrders">
+            <table class="table table-striped table-bordered table-condensed" id="searchedOrders">
             </table>
         </div>
     </div>
